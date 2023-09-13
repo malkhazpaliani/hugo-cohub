@@ -1,4 +1,4 @@
-{{with .Site.Data.blogSection}}
+{{with index .Site.Data .Language.Lang "blogSection" }}
 {{if .enable}}
 <section class="blog" id="blog">
   <div class="container">

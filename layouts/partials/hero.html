@@ -1,4 +1,4 @@
-{{with .Site.Data.hero}}
+{{with index .Site.Data .Language.Lang "hero" }}
 {{if .enable}}
   <section class="hero" style="background-image: url( {{ .heroBGimg | absURL }} );">
     <div class="container">
@@ -7,9 +7,8 @@
           <div class="hero-content">
             <h1>{{.title | safeHTML}}</h1>
             <p>
-              {{.subtitle}}
+              {{ .subtitle }}
             </p>
-
             <div class="hero-video-player">
               <div class="hero-video-player-icon">
                 <a class="popup-vimeo" href="{{ .heroVideo }}">

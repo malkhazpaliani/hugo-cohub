@@ -1,4 +1,4 @@
-{{ with .Site.Data.testimonial}}
+{{with index .Site.Data .Language.Lang "testimonial" }}
 {{ if .enable}}
 <section class="quotes">
   <div class="container">
@@ -8,7 +8,7 @@
           {{range .testimonial}}
 
           <div class="quotes-slider-item">
-            <h2>{{ .testimonialDetails }}</h2>
+            <h3>{{ .testimonialDetails }}</h3>
             <span>- {{ .author }} -</span>
           </div>
         {{end}}

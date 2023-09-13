@@ -1,14 +1,29 @@
 {{define "main"}}
 <section class="privacy-policy">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="page-header">
-          <h1>{{ .Title}}</h1>
-          <p>{{.Params.subTitle}}</p>
+
+    <section class="story">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <div class="story-content">
+              <h1>{{ .Title}}</h1>
+              <p>{{.Params.subTitle}}</p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="story-slider">
+              {{range .Params.sliderImage }}
+                <div class="slider-item">
+                  <img src="{{ .image | absURL }}" alt="images">
+                </div>
+              {{end}}
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
+
     <div class="row">
       <div class="col-lg-12">
         <div class="privacy-policy-content">

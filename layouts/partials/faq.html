@@ -1,5 +1,5 @@
-{{with .Site.Data.faq}}
-{{if .enable}}
+{{with index .Site.Data .Language.Lang "faq" }}
+{{if .enable }}
 <section class="faq" id="faq">
   <div class="container">
     <div class="row">
