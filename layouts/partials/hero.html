@@ -1,6 +1,6 @@
 {{with .Site.Data.hero}}
 {{if .enable}}
-  <section class="hero" style="background-image: url( {{ .heroBGimg }} );">
+  <section class="hero" style="background-image: url( {{ .heroBGimg | absURL }} );">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-12">

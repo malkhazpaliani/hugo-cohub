@@ -20,13 +20,13 @@
           <div class="blog-content">
             <h3><a href="{{ .Permalink }}">{{.Title}}</a></h3>
             <p>{{ truncate 75 .Summary }}</p>
-            <a class="more" href="{{ .Permalink }}">Read more <span>⟶</span></a>
+            <a class="more" href="{{ .Permalink }}">{{ T "Read_more" }}<span>⟶</span></a>
           </div>
         </article>
       </div>
       {{end}}
       <div class="col-12 text-center">
-        <a href="{{.buttonTarget | absURL}}" class="btn btn-primary">Travel experience</a>
+        <a href="{{.buttonTarget | absURL}}" class="btn btn-primary">{{ T "Travel_experience" }}</a>
       </div>
     </div>
   </div>

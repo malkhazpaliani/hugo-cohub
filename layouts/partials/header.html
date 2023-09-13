@@ -20,10 +20,24 @@
           {{ $menu := .Site.Menus.main}}
           {{range $index, $element := $menu}}
           <li class="nav-item {{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{ end }}">
-             <a class="nav-link scroll-to" href="{{ $.Site.BaseURL }}{{ .URL }}">{{.Name}}</a>
+             <a class="nav-link scroll-to" href="{{ $.Site.BaseURL }}{{ relLangURL .URL }}">{{.Name}}</a>
           </li>
           {{end}}
         </ul>
+        {{ if .Site.IsMultiLingual }}
+        <ul class="navbar-nav ml-auto language-list">
+            {{ $pageLang := .Page.Lang}}
+            {{ range .Site.Home.AllTranslations }}
+            {{ if ne $pageLang .Lang }}
+            <li class="nav-item">
+              <a class="nav-link scroll-to" href="{{ .Permalink }}">
+                {{ .Site.Params.flag }}
+              </a>
+            </li>
+            {{ end }}
+            {{ end }}
+        </ul>
+        {{ end }}
       </div>
     </div>
   </nav>

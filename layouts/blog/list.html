@@ -6,7 +6,7 @@
         <h1>{{.Title}}</h1>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ .Site.BaseURL }}">Home</a></li>
+            <li class="breadcrumb-item"><a href="{{ .Site.BaseURL }}">{{ T "Home" }}</a></li>
             <li class="breadcrumb-item active">{{.Title}}</li>
           </ol>
         </nav>
@@ -25,7 +25,7 @@
           <div class="blog-content">
             <h3><a href="{{ .Permalink }}">{{ .Title}}</a></h3>
             <p> {{truncate 100 .Summary}} </p>
-            <a class="more" href="{{ .Permalink }}">Read more <span>⟶</span></a>
+            <a class="more" href="{{ .Permalink }}">{{ T "Read_more" }}<span>⟶</span></a>
           </div>
         </article>
       </div>
